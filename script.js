@@ -20,8 +20,8 @@ afterLogin.style = "display: none !important";
 loginBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (
-    emailInput.value.toLowerCase() == "" &&
-    passwordInput.value.toLowerCase() == ""
+    emailInput.value.toLowerCase() == "imran@imran" &&
+    passwordInput.value.toLowerCase() == "imran"
   ) {
     beforeLogin.style = "display: none !important;";
     afterLogin.style = "display: block !important";
