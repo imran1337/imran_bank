@@ -20,8 +20,8 @@ afterLogin.style = "display: none !important";
 loginBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (
-    emailInput.value.toLowerCase() == "demo@demo.com" &&
-    passwordInput.value.toLowerCase() == "demo"
+    emailInput.value.toLowerCase() == "" &&
+    passwordInput.value.toLowerCase() == ""
   ) {
     beforeLogin.style = "display: none !important;";
     afterLogin.style = "display: block !important";
@@ -46,16 +46,20 @@ depositBtn.addEventListener("click", (event) => {
 withdrawBtn.addEventListener("click", () => {
   const withdrawInputNum = parseFloat(withdrawInput.value);
   const mainBalanceNum = parseFloat(mainBalance.innerText);
-  if (withdrawInputNum < 0 || withdrawInput.value == "") {
-    alert("Invalid Amount");
+  if (withdrawInputNum < 0) {
+    alert("Amount can't be negative");
     withdrawInput.value = "";
   } else if (mainBalanceNum >= 1 && mainBalanceNum >= withdrawInputNum) {
     withdrawBalance.innerText =
       withdrawInputNum + parseFloat(withdrawBalance.innerText);
     mainBalance.innerText = mainBalanceNum - withdrawInputNum;
     withdrawInput.value = "";
-  } else {
+  } else if (withdrawInput.value > mainBalanceNum) {
     alert("Insufficient Balance! Please Deposit.");
+    withdrawInput.value = "";
+    console.log(parseFloat(withdrawInput.value));
+  } else {
+    alert("Invalid Amount");
     withdrawInput.value = "";
   }
 });
