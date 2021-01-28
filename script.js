@@ -1,7 +1,5 @@
 // assign all id to variable
-function idCapture(idName) {
-  return document.getElementById(idName);
-}
+const idCapture = (idName) => document.getElementById(idName);
 // all variable
 const emailInput = idCapture("email_input");
 const passwordInput = idCapture("password_input");
@@ -22,13 +20,13 @@ afterLogin.style = "display: none !important";
 loginBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (
-    emailInput.value.toLowerCase() == "demo" &&
+    emailInput.value.toLowerCase() == "demo@demo.com" &&
     passwordInput.value.toLowerCase() == "demo"
   ) {
     beforeLogin.style = "display: none !important;";
     afterLogin.style = "display: block !important";
   } else {
-      alert('invalid userName or Password\nemail: demo pass: demo')
+    alert("invalid userName or Password\nemail: demo pass: demo");
   }
 });
 // deposit section
