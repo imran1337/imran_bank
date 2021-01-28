@@ -1,0 +1,40 @@
+body {
+    background: rgba(128, 128, 128, 0.199);
+}
+ #login_section {
+    transform: translate(-50%, 50%);
+} 
+#after_login{
+    margin-top: 100px;
+    /* transform: translateX(-50%); */
+}
+.money_details_item {
+    /* padding: 30px 60px; */
+    background-color: aquamarine;
+    margin: 10px;
+    width: 250px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px){
+    .money_details_item{
+        width: 100%;
+    }
+    h2 {font-size: 8vh;}
+}
+
+
+.money-adder-area{
+    margin-top: 50px;
+}
+.withdraw_area,.deposit_area{
+    width: 500px;
+    /* margin: 50px 20px 0px 20px; */
+    margin: 0 20px;
+    padding: 50px;
+    background-color: aquamarine;
+}
+
+h2 {font-size: 2vh;}
